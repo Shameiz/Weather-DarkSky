@@ -10,11 +10,7 @@ const forecast = (longitude,latitude,callback) => {
         }
         else {
             const currentStats = body.currently
-            callback(undefined,{
-                summary:body.daily.data[0].summary,
-                temperature:currentStats.temperature,
-                precipitation:currentStats.precipProbability
-            })
+            callback(undefined,body.daily.data[0].summary+ " It is currently "+currentStats.temperature+" and there is a "+currentStats.precipProbability+" probability of precipitation")
         }
     })
 }
